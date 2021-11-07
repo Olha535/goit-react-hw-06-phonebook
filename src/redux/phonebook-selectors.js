@@ -4,11 +4,9 @@ export const getFilter = state => state.contacts.filter;
 export const getVisibleContacts = state => {
   const contacts = getContacts(state);
   const filter = getFilter(state);
-  console.log(filter);
-  const normalizedFilter = filter.toLocaleLowerCase();
+  const normalizedFilter = filter.toLowerCase();
 
-  console.log(contacts);
   return contacts.filter(contact =>
-    contact.name.toLocaleLowerCase().includes(normalizedFilter),
+    contact.name.toLowerCase().includes(normalizedFilter),
   );
 };

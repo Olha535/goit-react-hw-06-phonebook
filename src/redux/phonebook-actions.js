@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { createAction } from '@reduxjs/toolkit';
 
-const addContact = createAction('phonebook/add', (name, number) => ({
+export const addContact = createAction('phonebook/add', (name, number) => ({
   payload: {
     id: uuidv4(),
     name,
@@ -9,12 +9,8 @@ const addContact = createAction('phonebook/add', (name, number) => ({
   },
 }));
 
-console.log(addContact('halo'));
-
-const deleteContact = createAction('phonebook/delete');
-const changeFilter = createAction('phonebook/changeFilter');
-
-export default { addContact, deleteContact, changeFilter };
+export const deleteContact = createAction('phonebook/delete');
+export const changeFilter = createAction('phonebook/changeFilter');
 
 ///////////////////////////////////////////////////
 
