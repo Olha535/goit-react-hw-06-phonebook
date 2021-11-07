@@ -31,7 +31,9 @@ function ContactForm() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const notContact = contacts.some(contact => contact.name.includes(name));
+    const notContact = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase(),
+    );
     if (notContact) {
       window.alert(`${name} is already in contacts`);
       return;

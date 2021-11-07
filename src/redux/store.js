@@ -30,7 +30,7 @@ const persistConfig = {
   blackList: ['filter'],
 };
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     contacts: persistReducer(persistConfig, phonebookReducer),
   },
@@ -38,4 +38,6 @@ export const store = configureStore({
   devTools: process.env.NODE_ENV === 'development',
 });
 
-export const persistor = persistStore(store);
+const persistor = persistStore(store);
+
+export default { store, persistor };
